@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Alpukat Kocok</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alpukat Kocok</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html" class="active">Kontak</a></li>
+                    <li><a href="cart.html" class="cart-link">Keranjang (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact">
+            <div class="container">
+                <h2>Hubungi Kami</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Informasi Kontak</h3>
+                        <p><strong>Alamat:</strong> Jl. Raya Alpukat No. 123, Bandung</p>
+                        <p><strong>Telepon/WA:</strong> <a href="https://wa.me/6281234567890">0812-3456-7890</a></p>
+                        <p><strong>Email:</strong> info@alpukatkocok.com</p>
+                        <p><strong>Jam Operasional:</strong> 09.00 - 21.00 (Setiap Hari)</p>
+                        
+                        <h3>Lokasi Kami</h3>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.9234659922866!2d107.6082903152947!3d-6.902069769412785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64a2c5b1e3d%3A0x1e0b4e3b4b5b6b7b!2sJl.%20Raya%20Alpukat%20No.%20123%2C%20Bandung!5e0!3m2!1sen!2sid!4v1621234567890!5m2!1sen!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Kirim Pesan</h3>
+                        <form id="contact-form" action="send_message.php" method="POST">
+                            <div class="form-group">
+                                <label for="contact-name">Nama</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Subjek</label>
+                                <input type="text" id="contact-subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Pesan</label>
+                                <textarea id="contact-message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Alpukat Kocok. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

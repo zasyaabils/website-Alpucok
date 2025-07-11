@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Alpukat Kocok</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alpukat Kocok</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="cart.html" class="cart-link">Keranjang (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="menu">
+            <div class="container">
+                <h2>Menu Alpukat Kocok</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="image/alpucokCoklat.png" alt="Alpukat Kocok Coklat">
+                        <h3>Alpukat Kocok Coklat</h3>
+                        <p>Alpukat segar dengan topping coklat leleh dan susu kental manis.</p>
+                        <div class="price">Rp 15.000</div>
+                        <button class="add-to-cart" data-id="1" data-name="Alpukat Kocok Coklat" data-price="15000">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="image/alpukatKeju.png" alt="Alpukat Kocok Keju">
+                        <h3>Alpukat Kocok Keju</h3>
+                        <p>Alpukat segar dengan keju parut dan susu kental manis.</p>
+                        <div class="price">Rp 18.000</div>
+                        <button class="add-to-cart" data-id="2" data-name="Alpukat Kocok Keju" data-price="18000">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="image/alpukatOreo.png" alt="Alpukat Kocok Oreo">
+                        <h3>Alpukat Kocok Oreo</h3>
+                        <p>Alpukat segar dengan crumble oreo dan susu kental manis.</p>
+                        <div class="price">Rp 20.000</div>
+                        <button class="add-to-cart" data-id="3" data-name="Alpukat Kocok Oreo" data-price="20000">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="image/alpukatMix.png" alt="Alpukat Kocok Mix">
+                        <h3>Alpukat Kocok Mix</h3>
+                        <p>Alpukat segar dengan campuran coklat, keju dan oreo.</p>
+                        <div class="price">Rp 22.000</div>
+                        <button class="add-to-cart" data-id="4" data-name="Alpukat Kocok Mix" data-price="22000">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="image/alpukatStrawberry.png" alt="Alpukat Kocok Strawberry">
+                        <h3>Alpukat Kocok Strawberry</h3>
+                        <p>Alpukat segar dengan saus strawberry dan susu kental manis.</p>
+                        <div class="price">Rp 18.000</div>
+                        <button class="add-to-cart" data-id="5" data-name="Alpukat Kocok Strawberry" data-price="18000">Tambah ke Keranjang</button>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/alpukat-special.jpg" alt="Alpukat Kocok Special">
+                        <h3>Alpukat Kocok Special</h3>
+                        <p>Alpukat segar dengan semua topping plus es krim vanilla.</p>
+                        <div class="price">Rp 25.000</div>
+                        <button class="add-to-cart" data-id="6" data-name="Alpukat Kocok Special" data-price="25000">Tambah ke Keranjang</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Alpukat Kocok. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

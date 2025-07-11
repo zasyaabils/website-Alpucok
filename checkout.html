@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Alpukat Kocok</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Alpukat Kocok</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="contact.html">Kontak</a></li>
+                    <li><a href="cart.html" class="cart-link">Keranjang (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="checkout">
+            <div class="container">
+                <h2>Formulir Pemesanan</h2>
+                <div class="checkout-grid">
+                    <div class="order-summary">
+                        <h3>Ringkasan Pesanan</h3>
+                        <div id="checkout-items">
+                            <!-- Order items will be inserted here by JavaScript -->
+                        </div>
+                        <div class="order-total">
+                            <h4>Total: <span id="checkout-total">Rp 0</span></h4>
+                        </div>
+                    </div>
+                    <div class="checkout-form">
+                        <form id="order-form" action="process_order.php" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nama Lengkap</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Alamat Pengiriman</label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor WhatsApp</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Metode Pembayaran</label>
+                                <div class="radio-group">
+                                    <label>
+                                        <input type="radio" name="payment" value="COD" checked> COD (Bayar saat terima)
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="payment" value="Transfer"> Transfer Bank
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Catatan Tambahan</label>
+                                <textarea id="notes" name="notes" rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Alpukat Kocok. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

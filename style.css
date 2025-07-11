@@ -1,0 +1,876 @@
+/* Global Styles */
+:root {
+    --primary-color: #579a2a; 
+    --secondary-color: #398423; 
+    --accent-color: #FFD700;
+    --dark-color: #82b523; 
+    --light-color: #d7f6bb; 
+    --text-color: #4A4A4A; 
+    --text-light: #7A7A7A; 
+    --bg-color-start: #cbecc6; 
+    --bg-color-end: #f2f9b9; 
+    --white: #f9ffe6;    
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12); 
+
+    /* Consistent Border Radii */
+    --border-radius-sm: 8px; 
+    --border-radius-md: 16px; 
+}
+
+/* Import Google Font - Inter for a clean, modern look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--bg-color-start) 0%, var(--bg-color-end) 100%); 
+    min-height: 100vh; 
+    line-height: 1.65; 
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1280px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color); 
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-1px); 
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px; 
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--border-radius-sm);
+    transition: all 0.3s ease-out; 
+    border: none;
+    cursor: pointer;
+    font-size: 17px; 
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow-hover); 
+}
+
+.btn-primary {
+    background-color: var(--dark-color); /* Darker button for emphasis */
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border for definition */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* More vertical padding */
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 28px; /* Larger logo text */
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px; /* Increased spacing between nav items */
+}
+
+nav ul li a {
+    font-weight: 500;
+    color: var(--text-color); /* Nav links match text color */
+    padding: 5px 0;
+    position: relative;
+}
+
+nav ul li a::after { /* Underline effect for nav links */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+nav ul li a.active::after {
+    width: 100%; /* Active link always has underline */
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0; /* More vertical padding */
+    background-color: var(--light-color);
+    overflow: hidden; /* Ensures shadows or transforms don't cause scrollbars */
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Gap between content and image */
+}
+
+.hero-content {
+    flex: 1;
+    padding-right: 0; /* Remove specific padding right */
+    max-width: 600px; /* Limit text width for better readability */
+}
+
+.hero-content h2 {
+    font-size: 44px; /* Larger, more impactful heading */
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 19px; /* Slightly larger body text */
+    margin-bottom: 40px; /* More space before button */
+    color: var(--text-light); /* Lighter text for hero paragraph */
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 20px; /* Padding for potential shadow around image */
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+    transition: transform 0.4s ease-out; /* Smooth transition for image */
+}
+
+.hero-image img:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* Promo Slider */
+.promo-slider {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.promo-slider h2 {
+    text-align: center;
+    margin-bottom: 40px; /* More space before slider */
+    color: var(--dark-color);
+    font-size: 36px;
+}
+
+.slider {
+    position: relative;
+    max-width: 900px; /* Wider slider */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    position: relative; /* For positioning text overlay */
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 380px; /* Taller slides */
+    object-fit: cover;
+    display: block; /* Remove extra space below image */
+}
+
+.slide p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly more transparent overlay */
+    color: var(--white);
+    padding: 20px; /* More padding */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    backdrop-filter: blur(5px); /* Modern blur effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* More space below slider */
+}
+
+.slider-controls button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 25px; /* More padding */
+    margin: 0 12px; /* Increased margin */
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.slider-controls button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--bg-color); /* This will be overridden by body gradient */
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    font-size: 36px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly larger min-width */
+    gap: 35px; /* Increased gap */
+}
+
+.testimonial {
+    background-color: var(--white);
+    padding: 35px; /* More padding */
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: var(--shadow-hover);
+}
+
+.testimonial img {
+    width: 90px; /* Larger image */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px; /* More space below image */
+    border: 3px solid var(--primary-color); /* Subtle border around image */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+.testimonial h4 {
+    margin-bottom: 8px;
+    color: var(--dark-color);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.rating {
+    color: var(--accent-color); /* Using the new yellow accent color for stars */
+    font-size: 22px; /* Larger stars */
+}
+
+/* Menu Page */
+.menu {
+    padding: 80px 0;
+}
+
+.menu h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    font-size: 36px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+}
+
+.menu-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    display: flex;
+    flex-direction: column; /* Ensure content is stacked */
+}
+
+.menu-item:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: var(--shadow-hover);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 220px; /* Slightly taller images */
+    object-fit: cover;
+}
+
+.menu-item-content {
+    padding: 20px;
+    flex-grow: 1; /* Allows content area to grow */
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item h3 {
+    margin-bottom: 8px;
+    color: var(--dark-color);
+    font-size: 22px;
+}
+
+.menu-item p {
+    color: var(--text-light);
+    font-size: 15px;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows description to take up space */
+}
+
+.price {
+    font-weight: 700;
+    font-size: 20px; /* Larger price */
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    display: block;
+    width: 100%; /* Button takes full width of content area */
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.add-to-cart:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Page */
+.cart {
+    padding: 80px 0;
+}
+
+.cart h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    font-size: 36px;
+}
+
+.cart-items table {
+    width: 100%;
+    border-collapse: separate; /* Use separate to allow border-radius on cells */
+    border-spacing: 0; /* Remove default spacing */
+    margin-bottom: 40px;
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius-md);
+    overflow: hidden; /* Ensures inner content respects border-radius */
+}
+
+.cart-items th, .cart-items td {
+    padding: 18px 25px; /* More padding for table cells */
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-items th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+/* Rounded corners for table headers */
+.cart-items th:first-child { border-top-left-radius: var(--border-radius-md); }
+.cart-items th:last-child { border-top-right-radius: var(--border-radius-md); }
+
+.cart-items tr:last-child td {
+    border-bottom: none;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons and span */
+}
+
+.quantity-control button {
+    background-color: var(--light-color);
+    border: 1px solid var(--primary-color); /* Subtle border matching primary */
+    width: 35px; /* Larger buttons */
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-color);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.quantity-control button:hover {
+    background-color: var(--accent-color); /* Hover with accent color */
+    transform: scale(1.05);
+}
+
+.quantity-control span {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 17px;
+}
+
+.remove-item {
+    color: var(--secondary-color); /* Use pink for remove */
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.remove-item:hover {
+    color: #CC0055; /* Darker pink on hover */
+}
+
+.total-label {
+    text-align: right;
+    font-weight: 700;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.total-price {
+    font-weight: 700;
+    font-size: 24px; /* Larger total price */
+    color: var(--primary-color);
+    padding-top: 20px;
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px; /* Gap between buttons */
+}
+
+/* Checkout Page */
+.checkout {
+    padding: 80px 0;
+}
+
+.checkout h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    font-size: 36px;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Slightly larger form column */
+    gap: 40px; /* Increased gap */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.order-summary {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+}
+
+.order-summary h3 {
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    font-size: 24px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed #eee; /* Dashed border for softer look */
+    font-size: 16px;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-total {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 2px solid var(--primary-color);
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.checkout-form {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+}
+
+.checkout-form h3 {
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 16px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px; /* More padding for inputs */
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    font-size: 17px;
+    color: var(--text-color);
+    background-color: var(--light-color); /* Light background for inputs */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary-color); /* Focus with pink border */
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2); /* Soft pink focus ring */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px; /* Slightly taller textarea */
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap */
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 12px;
+    transform: scale(1.1); /* Slightly larger radio buttons */
+    accent-color: var(--secondary-color); /* Style radio button itself with pink */
+}
+
+/* Contact Page */
+.contact {
+    padding: 80px 0;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    font-size: 36px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+}
+
+.contact-info h3 {
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    font-size: 24px;
+}
+
+.contact-info p {
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.map-container {
+    margin-top: 30px; /* More space above map */
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 300px; /* Defined height for map container */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-form {
+    background-color: var(--white);
+    padding: 35px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+}
+
+.contact-form h3 {
+    margin-bottom: 25px;
+    color: var(--dark-color);
+    font-size: 24px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 30px 0; /* More padding */
+    text-align: center;
+    font-size: 15px;
+    margin-top: 50px; /* Space above footer */
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) { /* Adjusted breakpoint for larger tablets */
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding-right: 0;
+        margin-bottom: 40px;
+        max-width: 100%; /* Allow content to take full width */
+    }
+
+    .checkout-grid,
+    .contact-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 20px;
+        flex-wrap: wrap; /* Allow nav items to wrap */
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 8px 15px; /* Adjusted margin for wrapped items */
+    }
+
+    .promo-slider h2,
+    .testimonials h2,
+    .menu h2,
+    .cart h2,
+    .checkout h2,
+    .contact h2 {
+        font-size: 32px; /* Smaller headings on smaller screens */
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+    }
+
+    .cart-items table {
+        font-size: 14px;
+    }
+
+    .cart-items th,
+    .cart-items td {
+        padding: 15px 15px;
+    }
+}
+
+@media (max-width: 576px) { /* Adjusted breakpoint for smaller phones */
+    .container {
+        padding: 0 15px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .testimonial-grid,
+    .menu-grid {
+        grid-template-columns: 1fr; /* Single column for grids */
+    }
+
+    .slide img {
+        height: 280px; /* Shorter slides on small screens */
+    }
+
+    .slide p {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .slider-controls button {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+
+    .cart-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .cart-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .quantity-control button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+}
